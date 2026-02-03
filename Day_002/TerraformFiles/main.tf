@@ -1,10 +1,10 @@
-resource "aws_instance" "access-test" { # "access-test" is the variable name
+resource "aws_instance" "access-test" { # "access-test" is the reference in this code
 	ami = "ami-0ff5003538b60d5ec" # ID for Amazon Linux AMI from AWS AMI catalogue
 	instance_type = "t2.nano"
 	key_name = aws_key_pair.test-key.key_name # Reference to SSH key-pair defined below
 
 	tags = {
-		Name = "Terratron" # Assign a AWS tag
+		Name = "Terratron" # Name shown in AWS Console
 	}
 }
 

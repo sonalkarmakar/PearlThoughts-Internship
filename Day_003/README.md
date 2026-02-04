@@ -19,9 +19,12 @@
 - [Loom Video](https://www.loom.com/share/206736fcd1a14121a3259234e89f67ff)
 - Screenshots (see below)
 #### Screenshots
-- ![Strapi Admin Panel Running](./Screenshots/StrapiAdminPanel.png "Strapi Admin Panel Running")
-- ![AWS EC2 Configuration](./Screenshots/EC2AccessConfiguration.png "AWS EC2 Configuration")
-- ![Terraform Code](./Screenshots/TerraformCode.png "Terraform Code")
+- Strapi Admin Panel Running
+	![Strapi Admin Panel Running](./Screenshots/StrapiAdminPanel.png "Strapi Admin Panel Running")
+- AWS EC2 Configuration
+	![AWS EC2 Configuration](./Screenshots/EC2AccessConfiguration.png "AWS EC2 Configuration")
+- Terraform Code
+	![Terraform Code](./Screenshots/TerraformCode.png "Terraform Code")
 ### Problems
 - I couldn't login to EC2 Instances from my machine using SSH. So, I logged in from Console for deploying the project.
 ## References

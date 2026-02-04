@@ -1,1 +1,3 @@
 Day_001/strapi
+**/**/.terraform*
+**/**/terraform.tfstate*

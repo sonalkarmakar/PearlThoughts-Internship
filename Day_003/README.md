@@ -15,7 +15,7 @@
 - ***Step 2***: Login to EC2 instance using SSH and installed NodeJS as per [official AWS Documentation](https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html).
 - ***Step 3***: Created a [Bash script](./deploy_sample_strapi_project.sh) to deploy the Strapi project.
 ### Deliverables
-- [GitHub PR]()
+- [GitHub PR](https://github.com/sonalkarmakar/PearlThoughts-Internship/pull/3#issue-3896488516)
 - [Loom Video](https://www.loom.com/share/206736fcd1a14121a3259234e89f67ff)
 - Screenshots (see below)
 #### Screenshots

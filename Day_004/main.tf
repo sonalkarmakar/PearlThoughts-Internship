@@ -1,6 +1,20 @@
+# Key Pair
+resource "aws_key_pair" "main" {
+	key_name   = "${var.project_name}-key-${var.environment}"
+	public_key = var.ssh_public_key
+
+	tags = {
+		Name        = "${var.project_name}-key-${var.environment}"
+		Environment = var.environment
+	}
+}
+
 # EC2 Instance Module
 module "ec2_module" {
 	source = "./modules/EC2"
+
+	# SSH key-pair
+	key_pair_name = aws_key_pair.main.key_name
 
 	# Strapi variables
 	node_env              = var.node_env
@@ -18,6 +32,13 @@ module "ec2_module" {
 	# Project variables
 	environment  = var.environment
 	project_name = var.project_name
+
+	# IAM attributes
+	iam_instance_profile = module.iam_module.iam_instance_profile_name
+	
+	# VPC attributes
+	private_subnet_ids    = module.vpc_module.private_subnet_ids
+	security_group_ec2_id = module.vpc_module.security_group_ec2_id
 }
 
 # IAM Module
@@ -39,6 +60,14 @@ module "alb_module" {
 
 	# Infrastructure variables
 	enable_deletion_protection = var.enable_deletion_protection
+
+	# VPC attributes
+	vpc_id                = module.vpc_module.vpc_id
+	public_subnet_ids     = module.vpc_module.public_subnet_ids
+	security_group_alb_id = module.vpc_module.security_group_alb_id
+
+	# EC2 attributes
+	ec2_instance_id = module.ec2_module.ec2_instance_id
 }
 
 # VPC Module
@@ -57,15 +86,4 @@ module "vpc_module" {
 	private_subnet_cidrs = var.private_subnet_cidrs
 	public_subnet_cidrs = var.public_subnet_cidrs
 	allowed_ssh_cidrs = var.allowed_ssh_cidrs # Allow SSH traffic
-}
-
-# Key Pair
-resource "aws_key_pair" "main" {
-	key_name   = "${var.project_name}-key-${var.environment}"
-	public_key = var.ssh_public_key
-
-	tags = {
-		Name        = "${var.project_name}-key-${var.environment}"
-		Environment = var.environment
-	}
 }

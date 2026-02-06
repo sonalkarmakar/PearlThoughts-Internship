@@ -15,10 +15,18 @@ variable "instance_type" {
 	description = "EC2 instance type"
 }
 
+variable "key_pair_name" {
+	description = "Name of the SSH key pair"
+}
+
 variable "root_volume_size" {
 	type        = number
 	default     = 20
 	description = "Size of root volume in GB"
+}
+
+variable "security_group_ec2_id" {
+	description = "ID of the ALB security group"
 }
 
 # Strapi Configuration Variables
@@ -62,4 +70,14 @@ variable "database_filename" {
 	type        = string
 	default     = ".tmp/data.db"
 	description = "Database filename for SQLite"
+}
+
+# VPC attributes
+variable "private_subnet_ids" {
+	description = "IDs of private subnets"
+}
+
+# IAM attributes
+variable "iam_instance_profile" {
+	description = "Name of the IAM profile for the EC2 Instance"
 }

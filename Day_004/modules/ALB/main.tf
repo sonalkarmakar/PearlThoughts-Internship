@@ -3,8 +3,8 @@ resource "aws_lb" "main" {
 	name               = "${var.project_name}-alb-${var.environment}"
 	internal           = false
 	load_balancer_type = "application"
-	security_groups    = [aws_security_group.alb.id]
-	subnets            = aws_subnet.public[*].id
+	security_groups    = [var.security_group_alb_id] #[aws_security_group.alb.id]
+	subnets            = var.public_subnet_ids #aws_subnet.public[*].id
 
 	enable_deletion_protection = var.enable_deletion_protection
 
@@ -19,7 +19,7 @@ resource "aws_lb_target_group" "strapi" {
 	name     = "${var.project_name}-tg-${var.environment}"
 	port     = 1337
 	protocol = "HTTP"
-	vpc_id   = aws_vpc.main.id
+	vpc_id   = var.vpc_id #aws_vpc.main.id
 
 	health_check {
 		enabled             = true
@@ -42,7 +42,7 @@ resource "aws_lb_target_group" "strapi" {
 # Target Group Attachment
 resource "aws_lb_target_group_attachment" "strapi" {
 	target_group_arn = aws_lb_target_group.strapi.arn
-	target_id        = aws_instance.strapi.id
+	target_id        = var.ec2_instance_id #aws_instance.strapi.id
 	port             = 1337
 }
 

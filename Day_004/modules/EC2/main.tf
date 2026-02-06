@@ -18,12 +18,12 @@ data "aws_ami" "amazon_linux_2023" {
 resource "aws_instance" "strapi" {
 	ami                    = data.aws_ami.amazon_linux_2023.id
 	instance_type          = var.instance_type
-	subnet_id              = aws_subnet.private[0].id
-	vpc_security_group_ids = [aws_security_group.ec2.id]
-	key_name               = aws_key_pair.main.key_name
-	iam_instance_profile   = aws_iam_instance_profile.ec2.name
+	subnet_id              = var.private_subnet_ids #aws_subnet.private[0].id
+	vpc_security_group_ids = var.security_group_ec2_id #[aws_security_group.ec2.id]
+	key_name               = var.key_pair_name #aws_key_pair.main.key_name
+	iam_instance_profile   = var.iam_instance_profile #aws_iam_instance_profile.ec2.name
 
-	user_data = templatefile("${path.module}/user_data.sh", {
+	user_data = templatefile("${path.root}/user_data.sh", {
 		strapi_app_keys       = var.strapi_app_keys
 		strapi_api_token_salt = var.strapi_api_token_salt
 		strapi_admin_jwt      = var.strapi_admin_jwt

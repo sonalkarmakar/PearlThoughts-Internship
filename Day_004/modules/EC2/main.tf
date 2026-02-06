@@ -18,8 +18,8 @@ data "aws_ami" "amazon_linux_2023" {
 resource "aws_instance" "strapi" {
 	ami                    = data.aws_ami.amazon_linux_2023.id
 	instance_type          = var.instance_type
-	subnet_id              = var.private_subnet_ids #aws_subnet.private[0].id
-	vpc_security_group_ids = var.security_group_ec2_id #[aws_security_group.ec2.id]
+	subnet_id              = var.private_subnet_ids[0] #aws_subnet.private[0].id
+	vpc_security_group_ids = [var.security_group_ec2_id] #[aws_security_group.ec2.id]
 	key_name               = var.key_pair_name #aws_key_pair.main.key_name
 	iam_instance_profile   = var.iam_instance_profile #aws_iam_instance_profile.ec2.name
 

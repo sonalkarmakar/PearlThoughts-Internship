@@ -83,3 +83,10 @@ This might be because of AWS account age, but this is also a known issue for mul
     ![VPC setup diagram](./Screenshots/VPC_Diagram.png "VPC setup diagram")
 
 ## References
+- [Deploy an EC2 instance inside a custom VPC using Terraform](https://dev.to/uwadon1/deploy-an-ec2-instance-inside-a-custom-vpc-using-terraform-26e9).
+- [Provisioning a Network Load Balancer with Terraform](https://hceris.com/provisioning-a-network-load-balancer-with-terraform/).
+- [Terraform Registry | AWS Provider Documentation | `aws_lb`](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb).
+- [Build AWS EC2 Instances, Security Groups using Terraform](https://terraformguru.com/terraform-real-world-on-aws-ec2/07-AWS-EC2Instance-and-SecurityGroups/).
+- [Quickstart: Create a public load balancer to load balance VMs using Terraform](https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-public-terraform).
+- [Building AWS VPC and EC2 Infrastructure with Terraform: A Hands-On DevOps Tutorial](https://aws.plainenglish.io/building-aws-vpc-and-ec2-infrastructure-with-terraform-a-hands-on-devops-tutorial-4955eac76f4f).
+- [Placing EC2 Webserver Instances in a Private Subnet with Internet Access via NAT Gateway using Terraform](https://dev.to/chinmay13/placing-ec2-webserver-instances-in-a-private-subnet-with-internet-access-via-nat-gateway-using-terraform-167n).

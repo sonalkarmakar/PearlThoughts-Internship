@@ -1,8 +1,8 @@
 # VPC
 resource "aws_vpc" "main" {
 	cidr_block           = var.vpc_cidr
-	enable_dns_hostnames = true
 	enable_dns_support   = true
+	enable_dns_hostnames = true
 
 	tags = {
 		Name        = "${var.project_name}-vpc-${var.environment}"
@@ -30,8 +30,8 @@ resource "aws_subnet" "public" {
 
 	tags = {
 		Name        = "${var.project_name}-public-subnet-${count.index + 1}-${var.environment}"
-		Environment = var.environment
 		Type        = "Public"
+		Environment = var.environment
 	}
 }
 
@@ -44,8 +44,8 @@ resource "aws_subnet" "private" {
 
 	tags = {
 		Name        = "${var.project_name}-private-subnet-${count.index + 1}-${var.environment}"
-		Environment = var.environment
 		Type        = "Private"
+		Environment = var.environment
 	}
 }
 
@@ -63,8 +63,8 @@ resource "aws_eip" "nat" {
 
 # NAT Gateway
 resource "aws_nat_gateway" "main" {
-	allocation_id = aws_eip.nat.id
 	subnet_id     = aws_subnet.public[0].id
+	allocation_id = aws_eip.nat.id
 
 	tags = {
 		Name        = "${var.project_name}-nat-${var.environment}"
@@ -121,8 +121,8 @@ resource "aws_route_table_association" "private" {
 # Security Group for ALB
 resource "aws_security_group" "alb" {
 	name        = "${var.project_name}-alb-sg-${var.environment}"
-	description = "Security group for Application Load Balancer"
 	vpc_id      = aws_vpc.main.id
+	description = "Security group for Application Load Balancer"
 
 	ingress {
 		description = "HTTP from Internet"
@@ -157,8 +157,8 @@ resource "aws_security_group" "alb" {
 # Security Group for EC2
 resource "aws_security_group" "ec2" {
 	name        = "${var.project_name}-ec2-sg-${var.environment}"
-	description = "Security group for EC2 instances"
 	vpc_id      = aws_vpc.main.id
+	description = "Security group for EC2 instances"
 
 	ingress {
 		description     = "Strapi from ALB"

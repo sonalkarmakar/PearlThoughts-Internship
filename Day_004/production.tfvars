@@ -13,13 +13,13 @@ private_subnet_cidrs = ["10.1.11.0/24", "10.1.12.0/24"]
 
 # EC2 Configuration
 instance_type    = "t2.small"
-root_volume_size = 30
+root_volume_size = 32
 
 # SSH Configuration
 ssh_public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD... your-production-public-key-here"
 
 # Restrict SSH to specific IPs in production
-allowed_ssh_cidrs = ["0.0.0.0/0"] #["YOUR_OFFICE_IP/32"]
+allowed_ssh_cidrs = ["123.45.678.90/32"] #["YOUR_OFFICE_IP/32"]
 
 # ALB Configuration
 enable_deletion_protection = true

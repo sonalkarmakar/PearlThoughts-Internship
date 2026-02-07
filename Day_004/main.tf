@@ -82,8 +82,8 @@ module "vpc_module" {
 	project_name = var.project_name
 
 	# CIDR variables
-	vpc_cidr = var.vpc_cidr
+	vpc_cidr             = var.vpc_cidr
+	allowed_ssh_cidrs    = var.allowed_ssh_cidrs # Allow SSH traffic
+	public_subnet_cidrs  = var.public_subnet_cidrs
 	private_subnet_cidrs = var.private_subnet_cidrs
-	public_subnet_cidrs = var.public_subnet_cidrs
-	allowed_ssh_cidrs = var.allowed_ssh_cidrs # Allow SSH traffic
 }

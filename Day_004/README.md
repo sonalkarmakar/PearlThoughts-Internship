@@ -1,4 +1,4 @@
-# Day 3 & 4 | Task 4
+# Day 4 & 5 | Task 4
 ## Task Details
 Design modular Terraform code to deploy the following:
 1. A private EC2 instance in a VPC using public/private subnets.
@@ -74,7 +74,7 @@ This might be because of AWS account age, but this is also a known issue for mul
 ## Deliverables
 ### Links
 - [Loom video](https://www.loom.com/share/c3a93f100b1a49a898948c0400e72518)
-- [GitHub repository (this directory here)]
+- [GitHub repository (this directory here)](https://github.com/sonalkarmakar/PearlThoughts-Internship/tree/main/Day_004)
 
 ### Screenshots
 - Terraform exectuion completed

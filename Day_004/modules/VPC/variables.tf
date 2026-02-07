@@ -1,3 +1,9 @@
+# --------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the variables/inputs required by the VPC module.
+# These inputs or variable values are supplied by the main Terraform module.
+# --------------------------------------------------------------------------
+
 # Infrastructure variables
 variable "availability_zones" {
 	type        = list(string)

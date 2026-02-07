@@ -1,3 +1,8 @@
+# ---------------------------------------------------------------------------------------
+# DESCRIPTION
+# This file contains the definitions/configurations/specifications of the providers used.
+# ---------------------------------------------------------------------------------------
+
 # Provider Configuration
 terraform {
 	required_providers {

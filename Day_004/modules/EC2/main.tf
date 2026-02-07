@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the EC2 module.
+# It takes input defined in variables.tf, and gives output as defined in outputs.tf.
+# ----------------------------------------------------------------------------------
+
 # Get Latest Amazon Linux 2023 AMI
 data "aws_ami" "amazon_linux_2023" {
 	owners      = ["amazon"]

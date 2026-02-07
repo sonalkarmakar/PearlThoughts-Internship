@@ -1,3 +1,8 @@
+# -------------------------------------------------------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the outputs given by the ALB module, which get used by other modules after passing through main module.
+# -------------------------------------------------------------------------------------------------------------------------
+
 # ALB Outputs
 output "alb_dns_name" {
 	value       = aws_lb.main.dns_name

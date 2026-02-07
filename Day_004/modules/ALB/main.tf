@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the ALB module.
+# It takes input defined in variables.tf, and gives output as defined in outputs.tf.
+# ----------------------------------------------------------------------------------
+
 # Application Load Balancer
 resource "aws_lb" "main" {
 	name               = "${var.project_name}-alb-${var.environment}"

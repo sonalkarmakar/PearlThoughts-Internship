@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the IAM module.
+# It takes input defined in variables.tf, and gives output as defined in outputs.tf.
+# ----------------------------------------------------------------------------------
+
 # IAM Role for EC2
 resource "aws_iam_role" "ec2" {
 	name = "${var.project_name}-ec2-role-${var.environment}"

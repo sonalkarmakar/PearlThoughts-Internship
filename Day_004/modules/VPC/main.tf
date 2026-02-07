@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the VPC module.
+# It takes input defined in variables.tf, and gives output as defined in outputs.tf.
+# ----------------------------------------------------------------------------------
+
 # VPC
 resource "aws_vpc" "main" {
 	cidr_block           = var.vpc_cidr

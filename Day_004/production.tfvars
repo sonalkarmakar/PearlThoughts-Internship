@@ -1,3 +1,8 @@
+# -------------------------------------------------------------------------------------------------------
+# DESCRIPTION
+# This file contains the values to be provided by the user as per their PRODUCTION environment and setup.
+# -------------------------------------------------------------------------------------------------------
+
 # AWS Configuration
 aws_region = "ap-south-1"
 

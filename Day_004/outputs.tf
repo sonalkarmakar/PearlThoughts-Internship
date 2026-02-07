@@ -1,3 +1,8 @@
+# -------------------------------------------------------------------------------------
+# DESCRIPTION
+# This file contains the definitions of the outputs given by the main Terraform module.
+# -------------------------------------------------------------------------------------
+
 # VPC Outputs
 output "vpc_id" {
 	value       = module.vpc_module.vpc_id #aws_vpc.main.id

@@ -1,3 +1,9 @@
+# -----------------------------------------------------------------------------------------
+# DESCRIPTION
+# This file contains the variables used by the main Terraform module.
+# The values of the variables are taken from .tfvars files in the project's root directory.
+# -----------------------------------------------------------------------------------------
+
 # Infrastructure variables
 variable "aws_region" {
 	type        = string

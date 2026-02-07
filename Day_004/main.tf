@@ -1,3 +1,9 @@
+# -------------------------------------------------------------------------
+# DESCRIPTION
+# This file is the main Terraform module that works with the other modules.
+# This main module requires modules from ALB, EC2, IAM and VPC.
+# -------------------------------------------------------------------------
+
 # Key Pair
 resource "aws_key_pair" "main" {
 	key_name   = "${var.project_name}-key-${var.environment}"

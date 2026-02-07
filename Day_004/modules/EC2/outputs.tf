@@ -1,3 +1,8 @@
+# -------------------------------------------------------------------------------------------------------------------------
+# DESCRIPTION
+# This file defines the outputs given by the EC2 module, which get used by other modules after passing through main module.
+# -------------------------------------------------------------------------------------------------------------------------
+
 # EC2 Instance Ouputs
 output "ec2_instance_id" {
 	value       = aws_instance.strapi.id

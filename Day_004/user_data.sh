@@ -1,3 +1,9 @@
+# ----------------------------------------------------------------------------------------
+# DESCRIPTION
+# This script will be executed by Terraform inside the EC2 Instance when it's created.
+# This script installs and configures Docker, then creates a Strapi container and runs it.
+# ----------------------------------------------------------------------------------------
+
 #!/bin/bash
 
 # Update system

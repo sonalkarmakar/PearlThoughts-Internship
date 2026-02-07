@@ -30,7 +30,6 @@ Design modular Terraform code to deploy the following:
         ```
     - Plan infrastructure
         > [!NOTE]
-        >
         > 1. Use the **`-out=/path/to/file`** flag to save the plan to a file.
         > 2. **Not using the `-var-file=/path/to/file`** will make Terraform prompt you for input, because `terraform.tfvars` file is absent.
         ```sh
@@ -42,7 +41,6 @@ Design modular Terraform code to deploy the following:
         ```
     - Apply the planned infrastructure
         > [!NOTE]
-        > 
         > 1. Use the **`-auto-approve`** flag to automatically approve all deployments.
         > 2. **Not using the `-var-file=/path/to/file`** will make Terraform prompt you for input, because `terraform.tfvars` file is absent.
         ```sh
